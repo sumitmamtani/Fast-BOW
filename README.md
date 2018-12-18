@@ -1,2 +1,2 @@
 # Fast-BOW
-2018 IEEE ICIP -- Fast Bag of Words Generation
+Paper Accepted in BMVC(British Machine Vision Conference) 2018 -- Fast Bag of Words Generation
