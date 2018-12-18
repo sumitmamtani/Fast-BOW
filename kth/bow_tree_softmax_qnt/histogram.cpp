@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <armadillo>
 #include <string>
