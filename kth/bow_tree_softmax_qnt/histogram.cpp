@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <armadillo>
 #include <string>
@@ -40,12 +41,10 @@ int findcluster(mat x, node * root, mat H){
 			{
 				S[u]=0;
 			}
-            //cout<<temp->left<<" "<<"sumit1"<<endl;
+            //cout<<S[0]<<" "<<"sumit1"<<endl;
             for(int d=0; d<dim; d++){
-                //cout<< temp->c0[d]<<" ";
                 S[temp->c0[d]] += x(0,d);
             }
-            //cout<< temp->c0[dim]<<" "<<endl;
             S[temp->c0[dim]]+=1;
 			for(int u=0;u<U;u++)
 			{
@@ -58,16 +57,14 @@ int findcluster(mat x, node * root, mat H){
 			}
 
             for(int d=0; d<dim; d++){
-                //cout<< temp->c1[d]<<" ";
                 S[temp->c1[d]] += x(0,d);
             }
-            //cout<< temp->c1[dim]<<" "<<endl;
             S[temp->c1[dim]]+=1;
 			for(int u=0;u<U;u++)
 			{
 				sum1+=S[u]*H(u);
 			}
-            //cout<<temp->right<<  "sumit2"<<endl;
+            //cout<< "sumit2"<<endl;
             if(sum0>sum1){
                 temp = temp->left;
             }
@@ -156,7 +153,6 @@ int main(int argc, char **argv){
             //cout<<n<<endl;
             // search tree and get idx.
             int clidx = findcluster(V.row(n), root, H);
-            //cout << "sumit"<<endl;
             hist(v-1,clidx-1)++;
         }
         tt += tm.toc();
